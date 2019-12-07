@@ -10,10 +10,14 @@ function getRandomInteger(limit) {
   return Math.floor(Math.random() * Math.floor(limit));
 }
 
-function generatePassword() {
+function getPossibleCharacters(){
 	let sourceCharsString = "";
 	sourceCharsString = sourceCharsString.concat(numeric,upperCase,lowerCase,specialChars);
-	sourceCharsArray = sourceCharsString.split("");
+	return sourceCharsString.split("");
+}
+
+function generatePassword() {
+	let sourceCharsArray = getPossibleCharacters();
 	let newPassword = "";
 	for (i=0; i < passwordLength; i++) {
 		let randNum = getRandomInteger(sourceCharsArray.length);

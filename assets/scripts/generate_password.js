@@ -1,8 +1,16 @@
 //Generate Password script
 var generatedPassword = null;
+var passwordLength = 8;
+var numeric = "0123456789";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var specialChars = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 
 function generatePassword() {
-	alert("Password Generated");
+	let newPassword = "HelloWorld";
+	generatedPassword = newPassword;
+	//set the field with the password
+	document.getElementById('generatedPassword').value = newPassword;
 }
 
 function copyPassword() {

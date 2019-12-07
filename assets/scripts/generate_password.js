@@ -6,13 +6,17 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var specialChars = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 
+function getRandomInteger(limit) {
+  return Math.floor(Math.random() * Math.floor(limit));
+}
+
 function generatePassword() {
 	let sourceCharsString = "";
 	sourceCharsString = sourceCharsString.concat(numeric,upperCase,lowerCase,specialChars);
 	sourceCharsArray = sourceCharsString.split("");
 	let newPassword = "";
 	for (i=0; i < passwordLength; i++) {
-		let randNum = Math.floor(Math.random() * Math.floor(sourceCharsArray.length));
+		let randNum = getRandomInteger(sourceCharsArray.length);
 		let associatedChar = sourceCharsArray[randNum];
 		newPassword = newPassword.concat(associatedChar);
 	}

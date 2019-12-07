@@ -7,7 +7,15 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var specialChars = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 
 function generatePassword() {
-	let newPassword = "HelloWorld";
+	let sourceCharsString = "";
+	sourceCharsString = sourceCharsString.concat(numeric,upperCase,lowerCase,specialChars);
+	sourceCharsArray = sourceCharsString.split("");
+	let newPassword = "";
+	for (i=0; i < passwordLength; i++) {
+		let randNum = Math.floor(Math.random() * Math.floor(sourceCharsArray.length));
+		let associatedChar = sourceCharsArray[randNum];
+		newPassword = newPassword.concat(associatedChar);
+	}
 	generatedPassword = newPassword;
 	//set the field with the password
 	document.getElementById('generatedPassword').value = newPassword;

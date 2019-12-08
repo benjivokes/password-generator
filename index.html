@@ -10,19 +10,37 @@
     <title>Password Generator</title>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
-				<h1>Password Generator</h1>
-				<input type="text" class="form-control" id="generatedPassword" placeholder="Click 'Generate' to generate your new password" readonly>
-				<br>
-				<button type="button" class="btn btn-primary" onclick="generatePassword()">Generate</button>
-				<button type="button" class="btn btn-info" onclick="copyPassword()">Copy</button>
-			</div>
-			<div class="col-md-4"></div>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1>Password Generator</h1>
+                <div class="passwordOptions">
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="includeNumeric" checked>
+                        <label class="form-check-label" for="includeNumeric">Use numeric characters [0123456789]</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="includeLower" checked>
+                        <label class="form-check-label" for="includeLower">Use lowercase characters [a-z]</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="includeUpper" checked>
+                        <label class="form-check-label" for="includeUpper">Use uppercase characters [A-Z]</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="includeSpecial">
+                        <label class="form-check-label" for="includeSpecial">Use other characters</label>
+                    </div>
+                </div>
+                <input type="text" class="form-control" id="generatedPassword" placeholder="Click 'Generate' to generate your new password" readonly>
+                <br>
+                <button type="button" class="btn btn-primary" onclick="generatePassword()">Generate</button>
+                <button type="button" class="btn btn-info" onclick="copyPassword()">Copy</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
 </body>
 
 </html>

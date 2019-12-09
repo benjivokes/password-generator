@@ -16,6 +16,10 @@ function getPossibleCharacters(){
 	return sourceCharsString.split("");
 }
 
+function validateInput(){
+	//code to validate the inputs
+}
+
 function generatePassword() {
 	let sourceCharsArray = getPossibleCharacters();
 	let newPassword = "";
@@ -27,6 +31,8 @@ function generatePassword() {
 	generatedPassword = newPassword;
 	//set the field with the password
 	document.getElementById('generatedPassword').value = newPassword;
+	document.getElementById('generatedPassword').style.display = "block";
+	document.getElementById('copyPassword').style.display = "inline";
 }
 
 function copyPassword() {

@@ -1,11 +1,12 @@
 //Generate Password script
 var generatedPassword = null;
-var passwordLength = 8;
+var passwordLength = 10;
 var numeric = "0123456789";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var specialChars = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
 
+document.getElementById('passwordLength').value = passwordLength;
 function getRandomInteger(limit) {
   return Math.floor(Math.random() * Math.floor(limit));
 }

@@ -22,9 +22,16 @@ function validateInput(){
 	const includeLower = document.getElementById('includeLower').checked;
 	const includeUpper = document.getElementById('includeUpper').checked;
 	const includeSpecial = document.getElementById('includeSpecial').checked;
-	const passwordLength = document.getElementById('passwordLength').value;
+	const passwordLength = parseInt(document.getElementById('passwordLength').value,10);
 	let alertString = "Numeric: " + includeNumeric + "\nLower: " + includeLower + "\nUpper: " + includeUpper + "\nSpecial: " + includeSpecial + "\nLength: " + passwordLength;
 	window.alert(alertString);
+	//Code to verify at least one checkbox is checked
+	if ((includeNumeric == false) && (includeSpecial == false) && (includeLower == false) && (includeUpper ==false)) {
+		window.alert("There are no characters to use in the password! Tick at least one box.");
+	}
+	if ((passwordLength < 8) || (passwordLength > 128)) {
+		window.alert("The length you specified is not between 8 and 128!")
+	}
 }
 
 function generatePassword() {

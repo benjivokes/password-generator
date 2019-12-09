@@ -10,9 +10,21 @@ function getRandomInteger(limit) {
   return Math.floor(Math.random() * Math.floor(limit));
 }
 
-function getPossibleCharacters(){
+function getPossibleCharacters(input){
     let sourceCharsString = "";
-    sourceCharsString = sourceCharsString.concat(numeric,upperCase,lowerCase,specialChars);
+    if (input.includeNumeric) {
+        sourceCharsString += numeric;
+    }
+        if (input.includeLower) {
+        sourceCharsString += lowerCase;
+    }
+        if (input.includeUpper) {
+        sourceCharsString += upperCase;
+    }
+        if (input.includeSpecial) {
+        sourceCharsString += specialChars;
+    }
+    passwordLength = input.passwordLength;
     return sourceCharsString.split("");
 }
 
@@ -53,8 +65,9 @@ function generatePassword() {
     let validatedInput = validateInput();
     if (!validatedInput) {
         window.alert("Not valid input.");
+        return
     }
-    let sourceCharsArray = getPossibleCharacters();
+    let sourceCharsArray = getPossibleCharacters(validatedInput);
     let newPassword = "";
     for (i=0; i < passwordLength; i++) {
         let randNum = getRandomInteger(sourceCharsArray.length);

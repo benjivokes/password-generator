@@ -44,7 +44,6 @@ function validateInput(){
         "\nUpper: " + validatedInput.includeUpper + 
         "\nSpecial: " + validatedInput.includeSpecial + 
         "\nLength: " + validatedInput.passwordLength;
-    window.alert(alertString);
     //Code to verify at least one checkbox is checked
     if ((validatedInput.includeNumeric == false) &&
         (validatedInput.includeSpecial == false) &&
@@ -64,7 +63,6 @@ function validateInput(){
 function generatePassword() {
     let validatedInput = validateInput();
     if (!validatedInput) {
-        window.alert("Not valid input.");
         return
     }
     let sourceCharsArray = getPossibleCharacters(validatedInput);

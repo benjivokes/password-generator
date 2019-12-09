@@ -18,9 +18,17 @@ function getPossibleCharacters(){
 
 function validateInput(){
 	//code to validate the inputs
+	const includeNumeric = document.getElementById('includeNumeric').checked;
+	const includeLower = document.getElementById('includeLower').checked;
+	const includeUpper = document.getElementById('includeUpper').checked;
+	const includeSpecial = document.getElementById('includeSpecial').checked;
+	const passwordLength = document.getElementById('passwordLength').value;
+	let alertString = "Numeric: " + includeNumeric + "\nLower: " + includeLower + "\nUpper: " + includeUpper + "\nSpecial: " + includeSpecial + "\nLength: " + passwordLength;
+	window.alert(alertString);
 }
 
 function generatePassword() {
+	validateInput();
 	let sourceCharsArray = getPossibleCharacters();
 	let newPassword = "";
 	for (i=0; i < passwordLength; i++) {

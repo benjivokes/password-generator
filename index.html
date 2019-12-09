@@ -38,10 +38,10 @@
                         <label class="form-check-label" for="includeSpecial">Use other characters</label>
                     </div>
                 </div>
-                <input type="text" class="form-control" id="generatedPassword" placeholder="Click 'Generate' to generate your new password" readonly>
+                <input type="text" class="form-control" id="generatedPassword" readonly>
                 <br>
                 <button type="button" class="btn btn-primary" onclick="generatePassword()">Generate</button>
-                <button type="button" class="btn btn-info" onclick="copyPassword()">Copy</button>
+                <button id="copyPassword" type="button" class="btn btn-info" onclick="copyPassword()">Copy</button>
             </div>
             <div class="col-md-4"></div>
         </div>

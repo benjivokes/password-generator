@@ -16,6 +16,11 @@
             <div class="col-md-4">
                 <h1>Password Generator</h1>
                 <div class="passwordOptions">
+                    <div class="form-group">
+                        <label for="passwordLength">Length of password</label>
+                        <input type="number" class="form-control" id="passwordLength" min="8" max="128" value="8">
+                        <small id="passwordLengthHelp" class="form-text text-muted">Length between 8 and 128</small>
+                    </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="includeNumeric" checked>
                         <label class="form-check-label" for="includeNumeric">Use numeric characters [0123456789]</label>
